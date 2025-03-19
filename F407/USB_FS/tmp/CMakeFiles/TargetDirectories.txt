@@ -1,0 +1,8 @@
+D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/CMakeFiles/database.dir
+D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/CMakeFiles/USB_FS.Debug+STM32F407VETx.dir
+D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/CMakeFiles/USB_FS.Debug+STM32F407VETx-build.dir
+D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/CMakeFiles/USB_FS.Debug+STM32F407VETx-configure.dir
+D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/CMakeFiles/USB_FS.Debug+STM32F407VETx-executes.dir
+D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/CMakeFiles/USB_FS.Debug+STM32F407VETx-database.dir
+D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/CMakeFiles/edit_cache.dir
+D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,343 @@
+build:
+  generated-by: csolution version 2.8.0
+  solution: ../USB_FS.csolution.yml
+  project: USB_FS.cproject.yml
+  context: USB_FS.Debug+STM32F407VETx
+  compiler: AC6
+  device: STMicroelectronics::STM32F407VETx
+  device-pack: Keil::STM32F4xx_DFP@2.17.1
+  device-books:
+    - name: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Documentation/DM00031020.pdf
+      title: STM32F40x/41x/42x/43x Reference Manual
+    - name: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Documentation/DM00037051.pdf
+      title: STM32F405/407 Data Sheet
+    - name: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Documentation/DM00037591.pdf
+      title: STM32F40x/41x Errata Sheet
+    - name: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Documentation/dui0553a_cortex_m4_dgug.pdf
+      title: Cortex-M4 Generic User Guide
+    - name: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Documentation/DM00105879.pdf
+      title: STM32F4xx HAL Drivers
+    - name: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Documentation/DM00104712.pdf
+      title: STM32CubeMX User Manual
+  dbgconf:
+    - file: RTE/Device/STM32F407VETx/STM32F405_415_407_417_427_437_429_439.dbgconf
+      version: 0.0.0
+  processor:
+    endian: little
+    fpu: sp
+    core: Cortex-M4
+  packs:
+    - pack: ARM::CMSIS@6.1.0
+      path: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0
+    - pack: Keil::STM32F4xx_DFP@2.17.1
+      path: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1
+  optimize: none
+  debug: on
+  misc:
+    ASM:
+      - -masm=auto
+    C:
+      - -std=gnu11
+      - -Wno-macro-redefined
+      - -Wno-pragma-pack
+      - -Wno-parentheses-equality
+      - -Wno-license-management
+    CPP:
+      - -Wno-macro-redefined
+      - -Wno-pragma-pack
+      - -Wno-parentheses-equality
+      - -Wno-license-management
+    Link:
+      - --entry=Reset_Handler
+      - --info summarysizes
+      - --summary_stderr
+      - --diag_suppress=L6314W
+  define:
+    - STM32F407xx
+    - _RTE_
+  define-asm:
+    - STM32F407xx
+    - _RTE_
+  add-path:
+    - RTE/STM32_USB_Device_Library/Inc
+    - RTE/STM32_USB_Device_Library/CDC/Inc
+    - RTE/Device/STM32F407VETx
+    - RTE/_Debug_STM32F407VETx
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Driver/Include
+    - ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+    - ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc
+  add-path-asm:
+    - RTE/Device/STM32F407VETx
+    - RTE/_Debug_STM32F407VETx
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Driver/Include
+    - ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+    - ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc
+  output-dirs:
+    intdir: ../tmp
+    outdir: ../out/USB_FS/STM32F407VETx/Debug
+    rtedir: RTE
+  output:
+    - type: elf
+      file: USB_FS.axf
+  components:
+    - component: ARM::CMSIS:CORE@6.1.0
+      condition: ARMv6_7_8-M Device
+      from-pack: ARM::CMSIS@6.1.0
+      selected-by: ARM::CMSIS:CORE
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+          category: include
+          version: 6.1.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Include/tz_context.h
+          category: header
+          version: 6.1.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Template/ARMv8-M/main_s.c
+          category: sourceC
+          attr: template
+          version: 1.1.1
+          select: Secure mode 'main' module for ARMv8-M
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Template/ARMv8-M/tz_context.c
+          category: sourceC
+          attr: template
+          version: 1.1.1
+          select: RTOS Context Management (TrustZone for ARMv8-M)
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Documentation/html/Core/index.html
+          category: doc
+          version: 6.1.0
+    - component: Keil::CMSIS Driver:USB Device:Full-speed@2.23
+      condition: STM32F4 CMSIS_Driver USB0
+      from-pack: Keil::STM32F4xx_DFP@2.17.1
+      selected-by: Keil::CMSIS Driver:USB Device:Full-speed@2.23
+      implements: CMSIS Driver:USB Device@2.3.0
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/CMSIS/Driver/OTG_FS_STM32F4xx.c
+          category: source
+          version: 2.23.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/CMSIS/Driver/USBD_FS_STM32F4xx.c
+          category: source
+          version: 2.23.0
+    - component: Keil::Device:STM32Cube Framework:Classic@1.8.1
+      condition: STM32F4 Framework Classic
+      from-pack: Keil::STM32F4xx_DFP@2.17.1
+      selected-by: Keil::Device:STM32Cube Framework:Classic
+      implements: Device:STM32Cube Framework@1.0.0
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/MDK/CubeMX/Documentation/classic.html
+          category: doc
+          version: 1.8.1
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates/Inc/main.h
+          category: header
+          attr: template
+          version: 1.8.1
+          select: "'main' module for STM32Cube HAL"
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates/Inc/stm32f4xx_it.h
+          category: header
+          attr: template
+          version: 1.8.1
+          select: Exception Handlers and Peripheral IRQ
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates/Src/main.c
+          category: source
+          attr: template
+          version: 1.8.1
+          select: "'main' module for STM32Cube HAL"
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates/Src/stm32f4xx_hal_msp.c
+          category: source
+          attr: template
+          version: 1.8.1
+          select: MCU Specific HAL Initialization / De-Initialization
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates/Src/stm32f4xx_it.c
+          category: source
+          attr: template
+          version: 1.8.1
+          select: Exception Handlers and Peripheral IRQ
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates_LL/Inc/main.h
+          category: header
+          attr: template
+          version: 1.8.1
+          select: "'main' module for STM32Cube LL"
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates_LL/Src/main.c
+          category: source
+          attr: template
+          version: 1.8.1
+          select: "'main' module for STM32Cube LL"
+        - file: RTE/Device/STM32F407VETx/RTE_Device.h
+          category: header
+          attr: config
+          version: 2.4.5
+        - file: RTE/Device/STM32F407VETx/stm32f4xx_hal_conf.h
+          category: header
+          attr: config
+          version: 1.8.1
+    - component: Keil::Device:STM32Cube HAL:Common@1.8.1
+      condition: STM32F4 HAL Common
+      from-pack: Keil::STM32F4xx_DFP@2.17.1
+      selected-by: Keil::Device:STM32Cube HAL:Common
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc
+          category: include
+          version: 1.8.1
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+          category: header
+          version: 1.8.1
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+          category: source
+          version: 1.8.1
+    - component: Keil::Device:STM32Cube HAL:Cortex@1.8.1
+      condition: STM32F4 HAL
+      from-pack: Keil::STM32F4xx_DFP@2.17.1
+      selected-by: Keil::Device:STM32Cube HAL:Cortex
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+          category: source
+          version: 1.8.1
+    - component: Keil::Device:STM32Cube HAL:GPIO@1.8.1
+      condition: STM32F4 HAL
+      from-pack: Keil::STM32F4xx_DFP@2.17.1
+      selected-by: Keil::Device:STM32Cube HAL:GPIO
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+          category: source
+          version: 1.8.1
+    - component: Keil::Device:STM32Cube HAL:PCD@1.8.1
+      condition: STM32F4x1_40_41_412_42_43_44_46_47x_4x3 HAL
+      from-pack: Keil::STM32F4xx_DFP@2.17.1
+      selected-by: Keil::Device:STM32Cube HAL:PCD
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c
+          category: source
+          version: 1.8.1
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c
+          category: source
+          version: 1.8.1
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c
+          category: source
+          version: 1.8.1
+    - component: Keil::Device:STM32Cube HAL:RCC@1.8.1
+      condition: STM32F4 HAL GPIO
+      from-pack: Keil::STM32F4xx_DFP@2.17.1
+      selected-by: Keil::Device:STM32Cube HAL:RCC
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+          category: source
+          version: 1.8.1
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+          category: source
+          version: 1.8.1
+    - component: Keil::Device:Startup@2.6.3
+      condition: STM32F4 CMSIS
+      from-pack: Keil::STM32F4xx_DFP@2.17.1
+      selected-by: Device:Startup
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+          category: include
+          version: 2.6.3
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+          category: header
+          version: 2.6.3
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/MDK/Device/Source/ARM/STM32F40xxx_41xxx_OPT.s
+          category: source
+          attr: template
+          version: 2.6.3
+          select: Flash Option Bytes
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/MDK/Device/Source/ARM/STM32F4xx_OTP.s
+          category: source
+          attr: template
+          version: 2.6.3
+          select: Flash One-Time programmable Bytes
+        - file: RTE/Device/STM32F407VETx/startup_stm32f407xx.s
+          category: source
+          attr: config
+          version: 2.6.8
+        - file: RTE/Device/STM32F407VETx/system_stm32f4xx.c
+          category: source
+          attr: config
+          version: 2.6.8
+  apis:
+    - api: CMSIS Driver:USB Device@2.3.0
+      from-pack: ARM::CMSIS@6.1.0
+      implemented-by: Keil::CMSIS Driver:USB Device:Full-speed@2.23
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Documentation/html/Driver/group__usbd__interface__gr.html
+          category: doc
+          version: 2.3.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Driver/Include/Driver_USBD.h
+          category: header
+          version: 2.3.0
+    - api: Device:STM32Cube Framework@1.0.0
+      from-pack: Keil::STM32F4xx_DFP@2.17.1
+      implemented-by: Keil::Device:STM32Cube Framework:Classic@1.8.1
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/MDK/CubeMX/Documentation/index.html
+          category: doc
+          version: 1.0.0
+  linker:
+    script: RTE/Device/STM32F407VETx/ac6_linker_script.sct.src
+    regions: RTE/Device/STM32F407VETx/regions_STM32F407VETx.h
+  groups:
+    - group: Source Files
+      files:
+        - file: main.c
+          category: sourceC
+        - file: RTE/stm32f4xx_it.h
+          category: header
+        - file: RTE/stm32f4xx_it.c
+          category: sourceC
+    - group: STM32_USB_Device_Library
+      files:
+        - file: RTE/STM32_USB_Device_Library/Inc/usbd_core.h
+          category: header
+        - file: RTE/STM32_USB_Device_Library/Inc/usbd_conf.h
+          category: header
+        - file: RTE/STM32_USB_Device_Library/Inc/usbd_ctlreq.h
+          category: header
+        - file: RTE/STM32_USB_Device_Library/Inc/usbd_def.h
+          category: header
+        - file: RTE/STM32_USB_Device_Library/Inc/usbd_desc.h
+          category: header
+        - file: RTE/STM32_USB_Device_Library/Inc/usbd_ioreq.h
+          category: header
+        - file: RTE/STM32_USB_Device_Library/Src/usbd_conf.c
+          category: sourceC
+        - file: RTE/STM32_USB_Device_Library/Src/usbd_core.c
+          category: sourceC
+        - file: RTE/STM32_USB_Device_Library/Src/usbd_ctlreq.c
+          category: sourceC
+        - file: RTE/STM32_USB_Device_Library/Src/usbd_desc.c
+          category: sourceC
+        - file: RTE/STM32_USB_Device_Library/Src/usbd_ioreq.c
+          category: sourceC
+        - file: RTE/STM32_USB_Device_Library/CDC/Inc/usbd_cdc.h
+          category: header
+        - file: RTE/STM32_USB_Device_Library/CDC/Inc/usbd_cdc_if.h
+          category: header
+        - file: RTE/STM32_USB_Device_Library/CDC/Src/usbd_cdc.c
+          category: sourceC
+        - file: RTE/STM32_USB_Device_Library/CDC/Src/usbd_cdc_if.c
+          category: sourceC
+  constructed-files:
+    - file: RTE/_Debug_STM32F407VETx/Pre_Include_Global.h
+      category: preIncludeGlobal
+    - file: RTE/_Debug_STM32F407VETx/RTE_Components.h
+      category: header
+  licenses:
+    - license: <unknown>
+      packs:
+        - pack: Keil::STM32F4xx_DFP@2.17.1
+      components:
+        - component: Device:STM32Cube Framework(API)
+        - component: Keil::CMSIS Driver:USB Device:Full-speed@2.23
+        - component: Keil::Device:STM32Cube Framework:Classic@1.8.1
+        - component: Keil::Device:STM32Cube HAL:Common@1.8.1
+        - component: Keil::Device:STM32Cube HAL:Cortex@1.8.1
+        - component: Keil::Device:STM32Cube HAL:GPIO@1.8.1
+        - component: Keil::Device:STM32Cube HAL:PCD@1.8.1
+        - component: Keil::Device:STM32Cube HAL:RCC@1.8.1
+        - component: Keil::Device:Startup@2.6.3
+    - license: Apache-2.0
+      packs:
+        - pack: ARM::CMSIS@6.1.0
+      components:
+        - component: ARM::CMSIS:CORE@6.1.0
+        - component: CMSIS Driver:USB Device(API)

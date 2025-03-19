@@ -1,0 +1,40 @@
+build-idx:
+  generated-by: csolution version 2.8.0
+  cdefault: ${CMSIS_COMPILER_ROOT}/cdefault.yml
+  csolution: USB_FS.csolution.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: USB_FS/USB_FS.cproject.yml
+  cbuilds:
+    - cbuild: USB_FS/USB_FS.Debug+STM32F407VETx.cbuild.yml
+      project: USB_FS
+      configuration: .Debug+STM32F407VETx
+      messages:
+        warnings:
+          - USB_FS.cproject.yml:11:17 - 'RTE\stm32f4xx_it.h' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:12:17 - 'RTE\stm32f4xx_it.c' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:15:17 - 'RTE\STM32_USB_Device_Library\Inc\usbd_core.h' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:16:17 - 'RTE\STM32_USB_Device_Library\Inc\usbd_conf.h' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:17:17 - 'RTE\STM32_USB_Device_Library\Inc\usbd_ctlreq.h' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:18:17 - 'RTE\STM32_USB_Device_Library\Inc\usbd_def.h' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:19:17 - 'RTE\STM32_USB_Device_Library\Inc\usbd_desc.h' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:20:17 - 'RTE\STM32_USB_Device_Library\Inc\usbd_ioreq.h' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:21:17 - 'RTE\STM32_USB_Device_Library\Src\usbd_conf.c' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:22:17 - 'RTE\STM32_USB_Device_Library\Src\usbd_core.c' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:23:17 - 'RTE\STM32_USB_Device_Library\Src\usbd_ctlreq.c' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:24:17 - 'RTE\STM32_USB_Device_Library\Src\usbd_desc.c' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:25:17 - 'RTE\STM32_USB_Device_Library\Src\usbd_ioreq.c' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:26:17 - 'RTE\STM32_USB_Device_Library\CDC\Inc\usbd_cdc.h' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:27:17 - 'RTE\STM32_USB_Device_Library\CDC\Inc\usbd_cdc_if.h' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:28:17 - 'RTE\STM32_USB_Device_Library\CDC\Src\usbd_cdc.c' contains non-portable backslash, use forward slash instead
+          - USB_FS.cproject.yml:29:17 - 'RTE\STM32_USB_Device_Library\CDC\Src\usbd_cdc_if.c' contains non-portable backslash, use forward slash instead
+          - "USB_FS.cproject.yml - dependency validation for context 'USB_FS.Debug+STM32F407VETx' failed:\nSELECTABLE Keil::Device:STM32Cube Framework:Classic@1.8.1\n  require Device:STM32Cube HAL:PWR\nSELECTABLE Keil::Device:STM32Cube HAL:Common@1.8.1\n  require Device:STM32Cube HAL:PWR"
+        info:
+          - USB_FS.cbuild-pack.yml - file is already up-to-date
+          - USB_FS+STM32F407VETx.cbuild-run.yml - file generated successfully
+          - USB_FS.Debug+STM32F407VETx.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-Driver@2.8.0
+        - pack: ARM::CMSIS-Driver_STM32@1.1.0
+        - pack: ARM::CMSIS-FreeRTOS@11.1.0
+        - pack: Keil::MDK-Middleware@8.0.0

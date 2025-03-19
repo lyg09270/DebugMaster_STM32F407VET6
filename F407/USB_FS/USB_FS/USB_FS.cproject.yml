@@ -1,0 +1,48 @@
+project:
+  setups:
+    - setup: Options for Target_1
+      add-path:
+        - ./RTE/STM32_USB_Device_Library/Inc
+        - ./RTE/STM32_USB_Device_Library/CDC/Inc
+  groups:
+    - group: Source Files
+      files:
+        - file: ./main.c
+        - file: RTE\stm32f4xx_it.h
+        - file: RTE\stm32f4xx_it.c
+    - group: STM32_USB_Device_Library
+      files:
+        - file: RTE\STM32_USB_Device_Library\Inc\usbd_core.h
+        - file: RTE\STM32_USB_Device_Library\Inc\usbd_conf.h
+        - file: RTE\STM32_USB_Device_Library\Inc\usbd_ctlreq.h
+        - file: RTE\STM32_USB_Device_Library\Inc\usbd_def.h
+        - file: RTE\STM32_USB_Device_Library\Inc\usbd_desc.h
+        - file: RTE\STM32_USB_Device_Library\Inc\usbd_ioreq.h
+        - file: RTE\STM32_USB_Device_Library\Src\usbd_conf.c
+        - file: RTE\STM32_USB_Device_Library\Src\usbd_core.c
+        - file: RTE\STM32_USB_Device_Library\Src\usbd_ctlreq.c
+        - file: RTE\STM32_USB_Device_Library\Src\usbd_desc.c
+        - file: RTE\STM32_USB_Device_Library\Src\usbd_ioreq.c
+        - file: RTE\STM32_USB_Device_Library\CDC\Inc\usbd_cdc.h
+        - file: RTE\STM32_USB_Device_Library\CDC\Inc\usbd_cdc_if.h
+        - file: RTE\STM32_USB_Device_Library\CDC\Src\usbd_cdc.c
+        - file: RTE\STM32_USB_Device_Library\CDC\Src\usbd_cdc_if.c
+  components:
+    - component: Device:Startup
+    - component: Keil::Device:STM32Cube Framework:Classic
+    - component: Keil::Device:STM32Cube HAL:Common
+    - component: Keil::Device:STM32Cube HAL:GPIO
+    - component: Keil::Device:STM32Cube HAL:RCC
+    - component: Keil::CMSIS Driver:USB Device:Full-speed@2.23
+    - component: ARM::CMSIS:CORE
+    - component: Keil::Device:STM32Cube HAL:PCD
+    - component: Keil::Device:STM32Cube HAL:Cortex
+  output:
+    type:
+      - elf
+  packs:
+    - pack: Keil::STM32F4xx_DFP
+    - pack: Keil::MDK-Middleware
+    - pack: ARM::CMSIS-FreeRTOS
+    - pack: ARM::CMSIS-Driver
+    - pack: ARM::CMSIS-Driver_STM32

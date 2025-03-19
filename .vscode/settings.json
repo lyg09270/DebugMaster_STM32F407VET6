@@ -1,0 +1,6 @@
+{
+    "cmake.ignoreCMakeListsMissing": true,
+    "clangd.arguments": [
+        "--compile-commands-dir=d:\\EECS\\Project\\DebugMaster_STM32F407VET6\\F407\\USB_FS\\out\\USB_FS\\STM32F407VETx\\Debug"
+    ]
+}

@@ -1,0 +1,52 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/CMakeFiles/USB_FS.Debug+STM32F407VETx"
+		},
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/CMakeFiles/USB_FS.Debug+STM32F407VETx.rule"
+		},
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/CMakeFiles/USB_FS.Debug+STM32F407VETx-complete.rule"
+		},
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/USB_FS.Debug+STM32F407VETx/src/USB_FS.Debug+STM32F407VETx-stamp/USB_FS.Debug+STM32F407VETx-build.rule"
+		},
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/USB_FS.Debug+STM32F407VETx/src/USB_FS.Debug+STM32F407VETx-stamp/USB_FS.Debug+STM32F407VETx-configure.rule"
+		},
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/USB_FS.Debug+STM32F407VETx/src/USB_FS.Debug+STM32F407VETx-stamp/USB_FS.Debug+STM32F407VETx-database.rule"
+		},
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/USB_FS.Debug+STM32F407VETx/src/USB_FS.Debug+STM32F407VETx-stamp/USB_FS.Debug+STM32F407VETx-download.rule"
+		},
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/USB_FS.Debug+STM32F407VETx/src/USB_FS.Debug+STM32F407VETx-stamp/USB_FS.Debug+STM32F407VETx-executes.rule"
+		},
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/USB_FS.Debug+STM32F407VETx/src/USB_FS.Debug+STM32F407VETx-stamp/USB_FS.Debug+STM32F407VETx-install.rule"
+		},
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/USB_FS.Debug+STM32F407VETx/src/USB_FS.Debug+STM32F407VETx-stamp/USB_FS.Debug+STM32F407VETx-mkdir.rule"
+		},
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/USB_FS.Debug+STM32F407VETx/src/USB_FS.Debug+STM32F407VETx-stamp/USB_FS.Debug+STM32F407VETx-patch.rule"
+		},
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/USB_FS.Debug+STM32F407VETx/src/USB_FS.Debug+STM32F407VETx-stamp/USB_FS.Debug+STM32F407VETx-test.rule"
+		},
+		{
+			"file" : "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/USB_FS.Debug+STM32F407VETx/src/USB_FS.Debug+STM32F407VETx-stamp/USB_FS.Debug+STM32F407VETx-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"USB_FS.Debug+STM32F407VETx"
+		],
+		"name" : "USB_FS.Debug+STM32F407VETx"
+	}
+}

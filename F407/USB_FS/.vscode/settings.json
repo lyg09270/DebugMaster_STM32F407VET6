@@ -1,0 +1,16 @@
+{
+    "clangd.arguments": [
+        "--compile-commands-dir=d:\\EECS\\Project\\DebugMaster\\F407\\USB_FS\\out\\USB_FS\\STM32F407VETx\\Debug"
+    ],
+    "cmake.sourceDirectory": "D:/EECS/Project/DebugMaster/F407/USB_FS/tmp/USB_FS.Debug+STM32F407VETx",
+    "cmsis-csolution.actions": [
+        {
+            "path": "USB_FS.csolution.yml",
+            "target": "STM32F407VETx",
+            "config": {
+                "run": "Flash Device",
+                "debug": "Arm Debugger"
+            }
+        }
+    ]
+}
